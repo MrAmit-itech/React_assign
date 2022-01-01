@@ -1,17 +1,30 @@
+import { useState } from "react"
 import Groceryinput from "./GroceryInput"
+import Final from "./Grocery"
+import { nanoid } from "nanoid"
 
 
 const Grocerylist=()=>{
-    const arr = []
+    const [list,setList] = useState([])
     const Todo=(data)=>{
        console.log('received in parent',data)
-       arr.push(data)
+       const payload={
+           title:data,
+           status:false,
+           id:nanoid(6)
+       }
+
+       setList([...list,payload])
     }
-    const Printarr=()=>{
-        console.log(arr)
+    console.log('list',list)
+
+    const handletoggle=(id)=>{
+        var arr = list.filter((el)=>el.id != id)
+        setList(arr)
     }
    return<>
-        <Groceryinput getdata={Todo} listinarr={Printarr} />
+        <Groceryinput getdata={Todo}  />
+        {list.map((e)=> <Final key={e.id} {...e} handletoggle={handletoggle}/>)}
    </>
 }
 export default Grocerylist

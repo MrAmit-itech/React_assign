@@ -1,13 +1,14 @@
 import logo from './logo.svg';
 import './App.css';
 import Final from './components/Grocery';
+import Grocerylist from './components/GroceryList';
 
 
 function App() {
   return (
     <div className="App">
-        <h1>this is my first react app</h1>
-        <Final/>
+        <h1 className='head'>GROCERY LIST</h1>
+        <Grocerylist/>
     </div>
   );
 }

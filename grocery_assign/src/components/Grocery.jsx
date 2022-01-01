@@ -1,9 +1,9 @@
-import Groceryinput from "./GroceryInput";
-import Grocerylist from "./GroceryList";
 
-const Final=()=>{
+
+const Final=({title,status,id,handletoggle})=>{
     return<>
-        <Grocerylist/>
+        <li>{title}{' '}
+        <button onClick={()=>{handletoggle(id)}} >delete</button></li>
     </>
 }
 

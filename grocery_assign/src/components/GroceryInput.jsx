@@ -1,6 +1,6 @@
 import { useState } from "react"
 
-const Groceryinput =({getdata,listinarr})=>{
+const Groceryinput =({getdata})=>{
     const[data,setData] = useState('')
 
     const Handlechange=(e)=>{
@@ -11,14 +11,11 @@ const Groceryinput =({getdata,listinarr})=>{
         const func = getdata   //getdata value is actually === todo() //
         func(data)
     }
-    const Handlearr=()=>{
-        listinarr()
-    }
+   
     
     return<>
         <input onChange={Handlechange} placeholder="plz enter the grocery name" type="text" />
         <button onClick={Handleclick}>Add Me</button>
-        <button onClick={Handlearr}>click Me</button>
     </>
 }
 
