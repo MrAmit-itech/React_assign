@@ -8,11 +8,11 @@ function App() {
   const[count,setCount] = useState(0)
 
   function Decrement(){
-    setCount(count-1)
+    setCount(prevCount => prevCount -1)
   }
 
   function Increment(){
-    setCount(count+1)
+    setCount(prevCount => prevCount +1)
   }
 
   function Double(){
