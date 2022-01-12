@@ -5,7 +5,10 @@ import { useState } from 'react';
 
 function App() {
  
-  const[count,setCount] = useState(0)
+  const[count,setCount] = useState(()=>{
+    console.log('run function')
+    return 0
+  })
 
   function Decrement(){
     setCount(prevCount => prevCount -1)
