@@ -1,9 +1,8 @@
-import {Link} from "react-router-dom"
+import { Link } from "react-router-dom"
 
 export const Navbar=()=>{
     return<>
-        <Link to="/">Home</Link>
-        <Link to="/about" style={{margin:"20px"}}>About</Link>
-        <Link to="/contact">Contact</Link>
+        <Link to={"/"} style={{margin:"20px"}}>Home</Link>
+        <Link to={"/product"}>Products</Link>
     </>
 }

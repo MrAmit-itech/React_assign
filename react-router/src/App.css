@@ -36,3 +36,31 @@
     transform: rotate(360deg);
   }
 }
+
+.displaybox{
+  display: grid;
+  grid-template-columns: 20% 20% 20% 20% ;
+  padding: 5px;
+  gap: 4%;
+  justify-content: center;
+}
+.displaybox>div{
+  display: flex;
+  border: 1px solid rgb(182, 179, 179);
+  padding: 2%;
+  text-align: left;
+}
+#imgbox{
+  width: 100%;
+  border: 1px solid rgb(173, 169, 169);
+  object-fit: cover;
+
+}
+.textbox{
+  padding: 2%;
+}
+img {
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
