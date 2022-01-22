@@ -1,4 +1,12 @@
+import { useContext } from "react"
+import {useParams} from "react-router-dom"
+import { Mydata } from "./product"
+
+
 export const Single=()=>{
-    
-    return<><h3>Hey this is single page</h3></>
+    var obj = JSON.parse(localStorage.getItem('cartvalue'))
+    console.log(obj)
+    return<>
+
+    </>
 }

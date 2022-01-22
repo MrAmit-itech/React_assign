@@ -1,6 +1,18 @@
 import { useState } from "react"
+import { createContext } from "react"
 import { useEffect } from "react"
-import { useParams } from "react-router-dom"
+import { Link, useParams } from "react-router-dom"
+import { Single } from "./singleproduct"
+       
+
+export const Mydata = createContext()
+export const Mydataprovider=({children})=>{
+
+    return<>
+        <Mydata.Provider value={"hello"}>{children}</Mydata.Provider>
+    </>
+}
+
 
 export const Product=()=>{
     const[productdata,setProductdata] = useState([])
@@ -10,40 +22,23 @@ export const Product=()=>{
         .then((p)=>p.json())
         .then((data)=>setProductdata(data))
     },[]) 
-    
-    let {identifier} = useParams()
-    if(identifier){
-        var arr = productdata.filter((el)=>el.id == identifier)
-        return<>
-            <div className="displaybox">
-            <>{arr.map((el)=>
-            <div >
-                <div id="imgbox"><img src={el.image} /></div>
-                <div className="textbox">
-                    <div><h5>{el.title}</h5></div>
-                    <div>{el.category}</div>
-                    <div><p>{el.description}</p></div>
-                    <div style={{color:"darkred"}}>${el.price}</div>
-                </div>
-            </div>
-            )}</>
-        </div>
-        </>
-    }else{
+
     return<>
         <h3>This is products page</h3>
         <div className="displaybox">
             <>{productdata.map((el)=>
             <div >
+
                 <div id="imgbox"><img src={el.image} /></div>
                 <div className="textbox">
                     <div><h5>{el.title}</h5></div>
                     <div>{el.category}</div>
                     <div style={{color:"darkred"}}>${el.price}</div>
+                    <Link to={`/product/${el.id}`}>Moredetail</Link>
+                    <>{()=>{localStorage.setItem('cartvalue',JSON.stringify([]))}}</>               
                 </div>
             </div>
             )}</>
         </div>
     </>
-    }
 }
