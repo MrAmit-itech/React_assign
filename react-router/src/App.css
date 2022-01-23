@@ -54,7 +54,13 @@
   width: 100%;
   border: 1px solid rgb(173, 169, 169);
   object-fit: cover;
-
+}
+#displaybox2{
+  width: 500px;
+  
+}
+#imgbox2{
+  width:400px
 }
 .textbox{
   padding: 2%;
