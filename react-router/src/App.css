@@ -57,10 +57,11 @@
 }
 #displaybox2{
   width: 500px;
-  
+  display: flex;
+  flex-direction: column;
 }
 #imgbox2{
-  width:400px
+  width:400px;
 }
 .textbox{
   padding: 2%;
