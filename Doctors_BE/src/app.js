@@ -11,8 +11,7 @@ app.get('/',(req,res)=>{
 })
 
 app.get('/doc',async(req,res)=>{
-    var respo = await doc_model.find().populate().lean().exec()
-    console.log(respo)
+    var respo = await doc_model.find().populate(['clinic_id','speciality_id','avail_id','cost_id']).lean().exec()
     res.send(respo)
 })
 
